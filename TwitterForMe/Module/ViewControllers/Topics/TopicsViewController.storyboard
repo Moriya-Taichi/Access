@@ -17,9 +17,23 @@
                     <view key="view" contentMode="scaleToFill" id="NSI-85-ZCj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r7L-8U-LU9">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </skView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="r7L-8U-LU9" firstAttribute="top" secondItem="wXO-5x-RWi" secondAttribute="top" id="Urg-Wx-xkK"/>
+                            <constraint firstItem="r7L-8U-LU9" firstAttribute="leading" secondItem="wXO-5x-RWi" secondAttribute="leading" id="XIQ-NM-VRm"/>
+                            <constraint firstItem="r7L-8U-LU9" firstAttribute="bottom" secondItem="wXO-5x-RWi" secondAttribute="bottom" id="rvL-aU-g9c"/>
+                            <constraint firstItem="r7L-8U-LU9" firstAttribute="trailing" secondItem="wXO-5x-RWi" secondAttribute="trailing" id="s6o-TI-EmJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wXO-5x-RWi"/>
                     </view>
+                    <connections>
+                        <outlet property="topicsView" destination="r7L-8U-LU9" id="yUK-Fs-44f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8B-dX-WqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

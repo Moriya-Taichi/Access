@@ -16,12 +16,14 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.image` struct is generated, and contains static references to 4 images.
+  /// This `R.image` struct is generated, and contains static references to 5 images.
   struct image {
     /// Image `home`.
     static let home = Rswift.ImageResource(bundle: R.hostingBundle, name: "home")
     /// Image `launchLogo`.
     static let launchLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "launchLogo")
+    /// Image `testUserIcon`.
+    static let testUserIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "testUserIcon")
     /// Image `topics`.
     static let topics = Rswift.ImageResource(bundle: R.hostingBundle, name: "topics")
     /// Image `twitter`.
@@ -35,6 +37,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "launchLogo", bundle: ..., traitCollection: ...)`
     static func launchLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.launchLogo, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "testUserIcon", bundle: ..., traitCollection: ...)`
+    static func testUserIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.testUserIcon, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "topics", bundle: ..., traitCollection: ...)`
@@ -73,8 +80,8 @@ struct R: Rswift.Validatable {
       return R.nib.launchScreen.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
     
-    static func timeLineViewControllerCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UITableViewCell? {
-      return R.nib.timeLineViewControllerCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UITableViewCell
+    static func timeLineViewControllerCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TimeLineViewControllerCell? {
+      return R.nib.timeLineViewControllerCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TimeLineViewControllerCell
     }
     
     fileprivate init() {}
@@ -180,8 +187,8 @@ struct _R: Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "TimeLineViewControllerCell"
       
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UITableViewCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UITableViewCell
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TimeLineViewControllerCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TimeLineViewControllerCell
       }
       
       fileprivate init() {}

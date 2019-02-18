@@ -14,10 +14,14 @@ class TopicsViewModel{
         let selectedTap:Signal<Void>
     }
     struct Output{
-        let allItem:Driver<[topics]>
+        let allItem:Driver<[Topics]>
     }
+    let testTopics = [Topics.init(topicsName: "Swift", topicsSize: 5),Topics.init(topicsName: "iOS", topicsSize: 4),
+                      Topics.init(topicsName: "開発", topicsSize: 4),Topics.init(topicsName: "寝", topicsSize: 2),
+                      Topics.init(topicsName: "酒", topicsSize: 3),Topics.init(topicsName: "rx", topicsSize: 1)]
     let disposeBug = DisposeBag()
-//    func build(input:Input) -> Output{
-//        
-//    }
+    let output:Output
+    init(){
+        self.output = Output.init(allItem: Driver<[Topics]>.just(testTopics))
+    }
 }

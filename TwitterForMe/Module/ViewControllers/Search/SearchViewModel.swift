@@ -6,4 +6,18 @@
 //  Copyright © 2019 守谷太一. All rights reserved.
 //
 
-import Foundation
+import RxSwift
+import RxCocoa
+import RxAtomic
+class SearchViewModel {
+    struct Input {
+        let searchText:Driver<String>
+    }
+    struct Output {
+        let filteredTweets:Driver<[scrapedTweetItem]>
+    }
+    let API = TwitterAPI.publicAPI
+    init(input:Input){
+        
+    }
+}

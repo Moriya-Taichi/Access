@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 class SearchViewController: UIViewController,ViewController {
     @IBOutlet weak var searchViewController: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     typealias V = SearchViewController
     static func make() -> V {
         let vc = R.storyboard.searchViewController.instantiateInitialViewController()!
@@ -18,5 +21,11 @@ class SearchViewController: UIViewController,ViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .darkGray
         searchViewController.backgroundColor = .darkGray
+        bind()
+    }
+    private func bind(){
+        let input = SearchViewModel.Input.init(searchText:searchBar.rx.text.debounce(1.0,scheduler: MainScheduler.instance).filterNil().asDriver(onErrorDriveWith: .empty()))
+        let viewModel = SearchViewModel.init(input: input)
+        viewModel
     }
 }
