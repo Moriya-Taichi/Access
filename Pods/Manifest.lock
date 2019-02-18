@@ -1,0 +1,47 @@
+PODS:
+  - Alamofire (4.8.1)
+  - Kanna (4.0.3)
+  - R.swift (5.0.2):
+    - R.swift.Library (~> 5.0.0)
+  - R.swift.Library (5.0.0)
+  - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
+  - RxOptional (3.6.2):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
+
+DEPENDENCIES:
+  - Alamofire
+  - Kanna
+  - R.swift
+  - RxCocoa
+  - RxOptional
+  - RxSwift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Kanna
+    - R.swift
+    - R.swift.Library
+    - RxAtomic
+    - RxCocoa
+    - RxOptional
+    - RxSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
+  R.swift: 81455d81467763cbd3f4d79d938d05f4ac4c0228
+  R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+
+PODFILE CHECKSUM: 2e9d5ae5658cc8a1ff1077d97376e7f704b39cdb
+
+COCOAPODS: 1.5.3
