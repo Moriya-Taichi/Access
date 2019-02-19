@@ -24,7 +24,7 @@ class SearchViewController: UIViewController,ViewController {
         bind()
     }
     private func bind(){
-        let input = SearchViewModel.Input.init(searchText:searchBar.rx.text.debounce(1.0,scheduler: MainScheduler.instance).filterNil().asDriver(onErrorDriveWith: .empty()))
+        let input = SearchViewModel.Input.init(searchText:searchBar.rx.text.debounce(0.5,scheduler: MainScheduler.instance).filterNil().distinctUntilChanged().asDriver(onErrorDriveWith: .empty()))
         let viewModel = SearchViewModel.init(input: input)
         viewModel
     }

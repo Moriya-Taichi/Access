@@ -18,6 +18,5 @@ class SearchViewModel {
     }
     let API = TwitterAPI.publicAPI
     init(input:Input){
-        
     }
 }

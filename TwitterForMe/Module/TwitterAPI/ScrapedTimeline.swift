@@ -7,18 +7,18 @@
 //
 
 import Foundation
-struct scrapedTweetJSON:Codable {
+struct scrapedTweetTimeline:Codable {
     let hasMoreItems:Bool
     let itemsHtml:String
     let maxPosition:String
     let minPosition:String
     let newLatentCount:Int
-    static func perseJSON(json:Data) throws -> scrapedTweetJSON{
+    static func perseJSON(json:Data) throws -> scrapedTweetTimeline{
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        guard let tweet = try? decoder.decode(scrapedTweetJSON.self, from: json) else {
+        guard let timeline = try? decoder.decode(scrapedTweetTimeline.self, from: json) else {
             throw apiError("Error persing timeline JSON")
         }
-        return scrapedTweetJSON(hasMoreItems: tweet.hasMoreItems, itemsHtml: tweet.itemsHtml, maxPosition: tweet.maxPosition, minPosition: tweet.minPosition, newLatentCount: tweet.newLatentCount)
+        return scrapedTweetTimeline(hasMoreItems: timeline.hasMoreItems, itemsHtml: timeline.itemsHtml, maxPosition: timeline.maxPosition, minPosition: timeline.minPosition, newLatentCount: timeline.newLatentCount)
     }
 }
